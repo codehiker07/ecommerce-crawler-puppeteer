@@ -4,28 +4,29 @@ import { setTimeout } from "timers/promises";
 import { Low } from "lowdb";
 import { JSONFile } from "lowdb/node";
 import { Queue, Worker } from "bullmq";
-import { Redis } from "ioredis";
+import Redis from "ioredis";
 import "dotenv/config";
-
-// const db = new Low(new JSONFile("ecommerce.json"), {});
-// await db.read();
-
-// const saveToDB = async (id, prductData) => {
-//   db.data[id] = prductData;
-//   await db.write();
-// };
 
 const connection = new Redis(process.env.REDIS_PATH, {
   maxRetriesPerRequest: null,
 });
 
+const db = new Low(new JSONFile("ecommerce.json"), {});
+await db.read();
+
+const saveToDB = async (id, prductData) => {
+  db.data[id] = prductData;
+  await db.write();
+};
+
 const browser = await puppeteer.launch({
   headless: false,
-  userDataDir: "/tmp/ecommerce-crawler",
+  userDataDir: "/temp/ecommerce-crawler",
 });
+
 const page = await browser.newPage();
 
-await page.goto("https://www.studioneat.com", { waitUntil: "networkidle0" });
+await page.goto("https://www.studioneat.com", { waitUntil: "networkidle2" });
 await page.waitForSelector(".product-title a");
 const productLinks = await page.evaluate(() => {
   return [...document.querySelectorAll(".product-title a")].map((e) => e.href);
@@ -34,6 +35,16 @@ const productLinks = await page.evaluate(() => {
 console.log(productLinks);
 await page.close();
 // await browser.close()
+
+const myQueue = new Queue("product", { connection });
+
+for (let productLink of productLinks) {
+  myQueue.add(
+    productLink, 
+    { url: productLink }, 
+    { jobId: productLink }
+  );
+}
 
 /**
  * @param {Page} page
@@ -53,7 +64,7 @@ new Worker(
     console.log(productLink);
 
     const page = await browser.newPage();
-    await page.goto(productLink, { waitUntil: "networkidle2" });
+    await page.goto(productLink, { waitUntil: "networkidle0", timeout: 60000 });
     await page.waitForSelector(".ecomm-container h1");
 
     const title = await extractText(page, ".ecomm-container h1");
@@ -62,15 +73,13 @@ new Worker(
     const description = await extractText(page, ".product-desc");
 
     const variants = await page.evaluate(() => {
-      return [
-        ...document.querySelectorAll(".single-option-selector option"),
-      ].map((e) => e.value);
+      return [...document.querySelectorAll(".single-option-selector option")].map((e) => e.value);
     });
 
     const variantData = [];
 
     for (const variant of variants) {
-      page.select(".single-option-selector", variant);
+      await page.select(".single-option-selector", variant);
       await setTimeout(100);
       // await page.$eval('#productPrice', e=>e.innerHTML)
       variantData.push({
@@ -90,8 +99,4 @@ new Worker(
   { connection }
 );
 
-const myQueue = new Queue("product", { connection });
 
-for (let productLink of productLinks) {
-  myQueue.add(productLink, { url: productLink }, { jobId: productLink });
-}
