@@ -1,0 +1,161 @@
+{
+  "https://www.studioneat.com/products/markone": {
+    "title": "Mark One",
+    "tagline": "A Minimal, Durable, Retractable Pen",
+    "price": "Tk 10,200",
+    "description": "Mark One is a custom machined, all-metal, retractable pen with a ceramic based exterior coating for long lasting durability. It’s built for our favorite <a href=\"/products/refill\">rollerball refill</a>, and has a satisfying-as-heck custom click mechanism.",
+    "variantData": [
+      {
+        "variant": "Black + Silver",
+        "price": "Tk 10,200"
+      },
+      {
+        "variant": "Black + Copper",
+        "price": "Tk 10,800"
+      },
+      {
+        "variant": "White + Copper",
+        "price": "Tk 12,000"
+      },
+      {
+        "variant": "White + Silver",
+        "price": "Tk 11,400"
+      },
+      {
+        "variant": "Black + Black (Steel)",
+        "price": "Tk 15,500"
+      },
+      {
+        "variant": "Black + Silver (Steel)",
+        "price": "Tk 15,000"
+      },
+      {
+        "variant": "Black + Copper (Steel)",
+        "price": "Tk 15,500"
+      },
+      {
+        "variant": "White + Copper (Steel)",
+        "price": "Tk 16,700"
+      },
+      {
+        "variant": "White + Silver (Steel)",
+        "price": "Tk 16,100"
+      }
+    ]
+  },
+  "https://www.studioneat.com/products/marktwo": {
+    "title": "Mark Two",
+    "tagline": "A Minimal and Durable Pocket Pen",
+    "price": "Tk 15,000",
+    "description": "Mark Two is a custom machined, all-metal pocket pen small enough to take with you, but extends to a full length when in use. Built to last a lifetime, it comes with a special mini version of our favorite rollerball refill.",
+    "variantData": [
+      {
+        "variant": "Silver - With Clip",
+        "price": "Tk 15,000"
+      },
+      {
+        "variant": "Black - With Clip",
+        "price": "Tk 16,700"
+      },
+      {
+        "variant": "Silver - No Clip",
+        "price": "Tk 13,200"
+      },
+      {
+        "variant": "Black - No Clip",
+        "price": "Tk 15,000"
+      }
+    ]
+  },
+  "https://www.studioneat.com/products/materialdock": {
+    "title": "Material Dock",
+    "tagline": "Wood Docks for MagSafe",
+    "price": "Tk 2,900",
+    "description": "Turn your MagSafe connector into a stationary dock for your iPhone. These bring-your-own-cable walnut docks create a lovely place to charge your iPhone, AirPods, and Apple Watch.",
+    "variantData": [
+      {
+        "variant": "Solo (iPhone)",
+        "price": "Tk 2,900"
+      },
+      {
+        "variant": "Trio (iPhone, AirPods, and Apple Watch)",
+        "price": "Tk 10,200"
+      },
+      {
+        "variant": "Upright Duo (iPhone and AirPods)",
+        "price": "Tk 6,500"
+      },
+      {
+        "variant": "Duo (iPhone and Apple Watch)",
+        "price": "Tk 5,800"
+      }
+    ]
+  },
+  "https://www.studioneat.com/products/panobook": {
+    "title": "Panobook",
+    "tagline": "A Notebook for Your Desk",
+    "price": "$3,000",
+    "description": "Panobook is a panoramic notebook for your desk, and eventually, your shelf. Made of quality materials and thoughtful details, and includes a slipcase for archiving when you’re finished.",
+    "variantData": []
+  },
+  "https://www.studioneat.com/products/markthree": {
+    "title": "Mark Three",
+    "tagline": "A Minimal and Durable Mechanical Pencil",
+    "price": "Tk 9,000",
+    "description": "Mark Three is a custom machined mechanical pencil with a ceramic based exterior coating for long lasting durability. It comes with 0.7 mm lead, but it’s easy to swap in a 0.5 mm lead advancer.",
+    "variantData": [
+      {
+        "variant": "Black + Silver",
+        "price": "Tk 9,000"
+      },
+      {
+        "variant": "Black + Copper",
+        "price": "Tk 9,600"
+      },
+      {
+        "variant": "White + Copper",
+        "price": "Tk 10,800"
+      },
+      {
+        "variant": "White + Silver",
+        "price": "Tk 10,200"
+      }
+    ]
+  },
+  "https://www.studioneat.com/products/keepbook": {
+    "title": "Keepbook",
+    "tagline": "A Notebook Meant to Be Kept",
+    "price": "Tk 3,000",
+    "description": "Keepbook is a hardcover, layflat notebook, made of quality materials and thoughtful details. Comes in three versions, and includes a sturdy slipcase for archiving when you’re finished.",
+    "variantData": [
+      {
+        "variant": "Dot Grid (160 pages)",
+        "price": "Tk 3,000"
+      },
+      {
+        "variant": "Ruled (160 pages)",
+        "price": "Tk 3,000"
+      },
+      {
+        "variant": "Blank (60 super thick pages)",
+        "price": "Tk 3,000"
+      }
+    ]
+  },
+  "https://www.studioneat.com/products/totebook": {
+    "title": "Totebook",
+    "tagline": "A Notebook to Take With You",
+    "price": "Tk 3,000",
+    "description": "Totebook is a thin, light, and flexible notebook, perfect for tucking in your bag to bring with you. Made of quality materials and thoughtful details, and includes a spine sticker for labeling and archiving. Comes in two sizes.",
+    "variantData": [
+      {
+        "variant": "Standard, 2-pack",
+        "price": "Tk 3,000"
+      },
+      {
+        "variant": "Mini, 3-pack",
+        "price": "Tk 3,000"
+      }
+    ]
+  }
+}
